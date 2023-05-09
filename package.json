@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gen": "cross-env NODE_ENV=dev node ./index.js"
   },
   "dependencies": {    
     "rxjs": "7.5.5",

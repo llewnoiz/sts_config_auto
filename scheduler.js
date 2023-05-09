@@ -1,8 +1,6 @@
 class Scheduler {
-    constructor(recipe) {
-
-      this.tasks = [];
-      this.recipe = recipe;
+    constructor() {
+      this.tasks = [];      
       this.currentTask = null;
     }
   
@@ -11,14 +9,12 @@ class Scheduler {
     }
   
     process() {
-      const self = this;
-      const data = self.recipe;
+      const self = this;      
       this.currentTask = this.tasks.shift();
       try {
         this.currentTask.task$?.subscribe({
           next(message) {
-            data.phase = message.type;
-            data.description = message?.description === undefined ? '' : message?.description;
+
             if (message.errCode === 0) {
               
 
